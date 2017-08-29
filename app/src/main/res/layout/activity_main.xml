@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/incrementButton"
         android:layout_marginBottom="16dp"
-        android:text="0"
+        android:text="2"
         android:textColor="@android:color/black"
         android:textSize="16sp" />
     <Button
