@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
+    android:orientation="vertical"
     tools:context="com.example.android.justjava.MainActivity">
 
     <TextView
@@ -16,34 +17,36 @@
         android:text="Quantity"
         android:textAllCaps="true"/>
 
-    <Button
-        android:id="@+id/incrementButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:width="48dp"
-        android:height="48dp"
-        android:text="+"
-        android:layout_alignParentBottom="@+id/textView"
-        android:layout_marginTop="16dp"
-        android:onClick="increment"/>
-    <TextView
-        android:id="@+id/quantity_text_view"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/incrementButton"
-        android:layout_marginBottom="16dp"
-        android:text="2"
-        android:textColor="@android:color/black"
-        android:textSize="16sp" />
-    <Button
-        android:id="@+id/decrementButton"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:text="-"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
-        android:layout_below="@+id/incrementButton"
-        android:onClick="decrement"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+        <Button
+            android:id="@+id/decrementButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:text="-"
+            android:onClick="decrement"/>
+        <TextView
+            android:id="@+id/quantity_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp" />
+        <Button
+            android:id="@+id/incrementButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:width="48dp"
+            android:height="48dp"
+            android:text="+"
+            android:onClick="increment"/>
+    </LinearLayout>
+
 
     <TextView
         android:id="@+id/price"
@@ -76,4 +79,4 @@
         android:onClick="submitOrder"
         android:id="@+id/button" />
 
-</RelativeLayout>
+</LinearLayout>
