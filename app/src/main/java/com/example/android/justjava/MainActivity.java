@@ -16,9 +16,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * Calculates the price of the order based on the current quantity.
+     *
+     * @return the price
+     */
+    private int calculatePrice() {
+        int price = quantity * 5;
+        return price;
+    }
+
+    private String createOrderSummary(int price ) {
+        return "Name: Diego Arturo\nQuantity: "+ quantity +"\nTotal: $" + calculatePrice() + "\nThank you!";
+    }
+
     public void submitOrder(View view){
-        String message = "Total: $" + (quantity * 5);
-        message = message + "\nThank you!";
+        int price = calculatePrice();
+        String message = createOrderSummary(price);
         displayMessage(message);
     }
 
