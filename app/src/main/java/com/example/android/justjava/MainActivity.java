@@ -26,9 +26,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String createOrderSummary() {
-        CheckBox whipped_checkbox = (CheckBox) findViewById(R.id.whipped_cream_check_box);
+        CheckBox hasWhippedCream = (CheckBox) findViewById(R.id.whipped_cream_check_box);
+        CheckBox hasChocolate = (CheckBox) findViewById(R.id.chocolate_check_box);
         return "Name: Diego Arturo\n" +
-                "Add Whipped Cream? "+ whipped_checkbox.isChecked() +"\n" +
+                "Add Whipped Cream? "+ hasWhippedCream.isChecked() +"\n" +
+                "Add Chocolate? "+ hasChocolate.isChecked() +"\n" +
                 "Quantity: "+ quantity +"\nTotal: $" + calculatePrice() + "\nThank you!";
     }
 
