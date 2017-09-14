@@ -21,8 +21,14 @@ public class MainActivity extends AppCompatActivity {
      *
      * @return the price
      */
-    private int calculatePrice() {
+    private int calculatePrice(Boolean isWhippedCreamChecked, Boolean isChocolateChecked) {
         int price = quantity * 5;
+        if (isWhippedCreamChecked) {
+            price += quantity * 1;
+        }
+        if (isChocolateChecked) {
+            price += quantity * 2;
+        }
         return price;
     }
 
@@ -34,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
     private String createOrderSummary() {
         CheckBox hasWhippedCream = (CheckBox) findViewById(R.id.whipped_cream_check_box);
         CheckBox hasChocolate = (CheckBox) findViewById(R.id.chocolate_check_box);
+        Boolean isWhippedCreamChecked = hasWhippedCream.isChecked();
+        Boolean isChocolateChecked = hasChocolate.isChecked();
         return "Name: "+ getName() +"\n" +
-                "Add Whipped Cream? "+ hasWhippedCream.isChecked() +"\n" +
-                "Add Chocolate? "+ hasChocolate.isChecked() +"\n" +
-                "Quantity: "+ quantity +"\nTotal: $" + calculatePrice() + "\nThank you!";
+                "Add Whipped Cream? "+ isWhippedCreamChecked +"\n" +
+                "Add Chocolate? "+ isChocolateChecked +"\n" +
+                "Quantity: "+ quantity +"\nTotal: $" + calculatePrice(isWhippedCreamChecked,isChocolateChecked) + "\nThank you!";
     }
 
     public void submitOrder(View view){
