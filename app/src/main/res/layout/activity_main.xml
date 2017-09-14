@@ -12,7 +12,12 @@
         android:paddingRight="16dp"
         android:paddingTop="16dp"
         android:orientation="vertical">
-
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/name_field"
+            android:hint="Enter your name, please"
+            android:inputType="textCapWords"/>
         <TextView
             android:id="@+id/toppins_text_view"
             android:layout_width="wrap_content"

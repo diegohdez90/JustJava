@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,10 +26,15 @@ public class MainActivity extends AppCompatActivity {
         return price;
     }
 
+    public String getName () {
+        EditText nameField = (EditText) findViewById(R.id.name_field);
+        return nameField.getText().toString();
+    }
+
     private String createOrderSummary() {
         CheckBox hasWhippedCream = (CheckBox) findViewById(R.id.whipped_cream_check_box);
         CheckBox hasChocolate = (CheckBox) findViewById(R.id.chocolate_check_box);
-        return "Name: Diego Arturo\n" +
+        return "Name: "+ getName() +"\n" +
                 "Add Whipped Cream? "+ hasWhippedCream.isChecked() +"\n" +
                 "Add Chocolate? "+ hasChocolate.isChecked() +"\n" +
                 "Quantity: "+ quantity +"\nTotal: $" + calculatePrice() + "\nThank you!";
