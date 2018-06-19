@@ -1,7 +1,5 @@
 package com.example.android.justjava;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -44,20 +42,23 @@ public class MainActivity extends AppCompatActivity {
         CheckBox hasChocolate = (CheckBox) findViewById(R.id.chocolate_check_box);
         Boolean isWhippedCreamChecked = hasWhippedCream.isChecked();
         Boolean isChocolateChecked = hasChocolate.isChecked();
-        return "Name: "+ getName() +"\n" +
-                "Add Whipped Cream? "+ isWhippedCreamChecked +"\n" +
-                "Add Chocolate? "+ isChocolateChecked +"\n" +
-                "Quantity: "+ quantity +"\nTotal: $" + calculatePrice(isWhippedCreamChecked,isChocolateChecked) + "\nThank you!";
+        return getString(R.string.order_name_summary, getName()) +"\n" +
+                getString(R.string.add_whipped_cream_summary, isWhippedCreamChecked) + "\n" +
+                getString(R.string.add_chocolate_summary, isChocolateChecked) + "\n" +
+                getString(R.string.quantity_summary, quantity) + "\n" +
+                getString(R.string.total_summary, calculatePrice(isWhippedCreamChecked,isChocolateChecked)) + "\n" +
+                getString(R.string.thank_you);
     }
 
     public void submitOrder(View view){
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        /*Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_SUBJECT, "JustJava order for "+ getName());
         intent.putExtra(Intent.EXTRA_TEXT, createOrderSummary());
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
-        }
+        }*/
+        displayMessage(createOrderSummary());
     }
 
     public void display(int number){
