@@ -40,7 +40,7 @@
                 android:id="@+id/chocolate_check_box"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/chocoalte"
+                android:text="@string/chocolate"
                 android:paddingLeft="24dp"
                 android:textSize="16sp"/>
         </LinearLayout>
