@@ -7,6 +7,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.NumberFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     int quantity = 2;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                 getString(R.string.add_whipped_cream_summary, isWhippedCreamChecked) + "\n" +
                 getString(R.string.add_chocolate_summary, isChocolateChecked) + "\n" +
                 getString(R.string.quantity_summary, quantity) + "\n" +
-                getString(R.string.total_summary, calculatePrice(isWhippedCreamChecked,isChocolateChecked)) + "\n" +
+                getString(R.string.total_summary, NumberFormat.getCurrencyInstance().format(calculatePrice(isWhippedCreamChecked,isChocolateChecked))) + "\n" +
                 getString(R.string.thank_you);
     }
 
